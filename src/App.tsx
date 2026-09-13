@@ -56,6 +56,7 @@ import { ScanHistoryView } from './components/ScanHistoryView';
 import { WeeklyReportModal } from './components/WeeklyReportModal';
 import { PremiumModal } from './components/PremiumModal';
 import { SettingsModal } from './components/SettingsModal';
+import { OfflineIndicator } from './components/OfflineIndicator';
 import { getDictionary, getLocalizedCondition } from './i18n/localizationHelper';
 
 const STORAGE_KEYS = {
@@ -480,6 +481,9 @@ export default function App() {
             </button>
           </div>
         </header>
+
+        {/* Real-time offline indicator */}
+        <OfflineIndicator currentLanguage={currentLanguage} />
 
         {/* Main Content Area */}
         <main className="flex-1 p-4 pb-28 overflow-y-auto space-y-4">

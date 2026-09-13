@@ -2,20 +2,54 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>FoodCheck - Smart Nutrition & Health Scanner</title>
     <meta name="description" content="Personalized food and medicine health scanner with bilingual Hindi/English details, salt composition, personalized health condition warnings, and Jan Aushadhi generic alternatives." />
+    
+    <!-- PWA Web App Manifest & Android / PWABuilder Meta -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#059669" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="FoodCheck" />
+    
+    <!-- iOS Safari PWA Meta & Touch Icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="FoodCheck" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    
+    <!-- Favicon & Icon links -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+
+    <!-- Open Graph & Social Cards -->
     <meta property="og:title" content="FoodCheck - Smart Nutrition & Medicine Scanner" />
     <meta property="og:description" content="Personalized food and medicine health scanner with bilingual Hindi/English details, salt composition, personalized health condition warnings, and Jan Aushadhi generic alternatives." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- Automatic Service Worker Registration for PWABuilder & Offline support -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('FoodCheck PWA ServiceWorker registration successful with scope:', registration.scope);
+            })
+            .catch((err) => {
+              console.log('FoodCheck PWA ServiceWorker registration failed:', err);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
-

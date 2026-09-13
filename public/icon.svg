@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="50%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f0fdf4" />
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#064e3b" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Subtle scanner laser effect line -->
+  <rect x="64" y="252" width="384" height="8" rx="4" fill="#6ee7b7" opacity="0.4" />
+
+  <!-- Central Shield -->
+  <g filter="url(#dropShadow)">
+    <path d="M 256 96 
+             C 340 96 384 128 384 180 
+             C 384 288 288 368 256 408 
+             C 224 368 128 288 128 180 
+             C 128 128 172 96 256 96 Z" 
+          fill="url(#shieldGrad)" />
+  </g>
+
+  <!-- Checkmark + Pill Cross Inside Shield -->
+  <!-- Emerald checkmark -->
+  <path d="M 200 240 L 238 278 L 316 195" 
+        fill="none" 
+        stroke="#059669" 
+        stroke-width="32" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+
+  <!-- Medicine capsule accent at top right of shield -->
+  <g transform="translate(295, 125) rotate(35)">
+    <rect x="0" y="0" width="30" height="60" rx="15" fill="#3b82f6" />
+    <path d="M 0 30 L 30 30 L 30 45 A 15 15 0 0 1 0 45 Z" fill="#ffffff" opacity="0.9" />
+  </g>
+</svg>
