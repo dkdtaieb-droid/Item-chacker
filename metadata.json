@@ -1,0 +1,6 @@
+{
+  "name": "FoodCheck",
+  "description": "Personalized food and medicine health scanner with bilingual Hindi/English details, salt composition, personalized health condition warnings, and Jan Aushadhi generic alternatives.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
